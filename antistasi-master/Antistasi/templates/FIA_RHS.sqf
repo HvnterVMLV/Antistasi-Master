@@ -101,22 +101,24 @@ AS_fnc_FIACustomSquad_initialization = {
 
 // Equipment unlocked by default
 unlockedWeapons = [
-		// Binoculars
+		//Binoculars
 	"Rangefinder",
 	"Binocular",
-		// Launchers
+		//Launchers
 	"rhs_weap_rpg7", // << RPG-7
 	"rhs_weap_fim92", // << Stinger Platform 
 	"tf47_smaw", // << SMAW
 	"tf47_m3maaws", // << MAAWS
-		// Sidearms
+		//Sidearms
 	"rhs_weap_makarov_pm", // << Mak PM
 	"rhs_weap_pb_6p9", // << 6P9 
 	"rhs_weap_pya", // << Grach MP-443
 	"rhsusf_weap_m1911a1", // << M1911
 	"rhs_weap_pp2000_folded", // << PP2000 
 	"rhs_weap_savz61", // << Vz. 61
-		// Rifles/Primaries
+		//Rifles/Primaries
+	"srifle_GM6_F", // << GM6 Lynx
+	"rhs_weap_m82a1", // << Barrett M82A1
 	"rhs_weap_m24sws", // << M24 SWS 
 	"rhs_weap_m38_rail", // << Mosin (rail) 
 	"rhs_weap_kar98k", // << Kar98K
@@ -142,13 +144,17 @@ unlockedWeapons = [
 ];
 
 unlockedMagazines = [
-		// Sidearm ammo
+		//Sidearm ammo
 	"rhsusf_mag_7x45acp_MHP", // << M1911 Mag
 	"rhs_mag_9x19mm_7n21_20", // << 20rd PP2000
 	"rhs_mag_9x18_8_57N181S", // << PM Mag
 	"rhs_mag_9x19_17", // << Grach Mag
 	"rhsgref_20rnd_765x17_vz61", // << Vz. 61 20rd Mag
-		// Rifle Ammo
+		//Rifle Ammo
+	"5Rnd_127x108_Mag", // << GM6 Lynx Std Mag 
+	"5Rnd_127x108_APDS_Mag", // << GM6 APDS Lynx Mag
+	"rhsusf_mag_10Rnd__STD_50BMG_M33", // << Barrett M82A1 Std Mag 
+	"rhsusf_mag_10Rnd__STD_50BMG_mk211", // << Barrett M82A1 Mk211 Raufoss 
 	"rhsgref_5Rnd_762x54_m38", // << Mosin Ammo
 	"rhsusf_5Rnd_762x51_M993_Mag", // << SWS AP Mag
 	"rhsgref_5Rnd_792x57_kar98k", // << Kar98K Ammo
@@ -167,13 +173,13 @@ unlockedMagazines = [
 	"hlc_20rnd_762x51_B_M14", // << 20rd EPR M14
 	"hlc_20rnd_762x51_T_M14", // << 20rd Tracer M14 
 	"hlc_20rnd_762x51_T_fal", // << 20rd Tracer FAL 
-	"hlc_20rnd_762x51_B_fal," // << 20rd EPR FAL
-		// Shot Shells
+	"hlc_20rnd_762x51_B_fal", // << 20rd EPR FAL
+		//Shot Shells
 	"rhsusf_8Rnd_00Buck", // <<  8rd 00 Buck 
 	"rhsusf_5Rnd_00Buck", // << 5rd 00 Buck 
 	"rhsusf_8Rnd_Slug", // << 8rd Slug
 	"rhsusf_5Rnd_Slug", // << 5rd Slug
-		// Launcher Ammo
+		//Launcher Ammo
 	"rhs_rpg7_PG7V_mag", // << PG7V (RPG Basic HEAT)
 	"rhs_rpg7_PG7VL_mag", // << PG7-VL (RPG Improved HEAT) 
 	"rhs_rpg7_OG7V_mag", // << OG7V (RPG Frag)
@@ -186,7 +192,7 @@ unlockedMagazines = [
 	"tf47_m3maaws_HEAT", // << Maaws HEAT 
 	"tf47_m3maaws_SMOKE", // << Maaws SMOKE 
 	"tf47_m3maaws_ILLUM", // << Maaws Flare
-		// Grenades
+		//Grenades
 	"rhs_mag_rgd5", // << RGD 5
 	"rhs_mag_rdg2_white" // << RGD2 Smoke
 
@@ -201,18 +207,27 @@ unlockedItems = unlockedItems + [
 	"SmokeShellPurple",
 	"IEDUrbanBig_Remote_Mag",
 	"IEDUrbanSmall_Remote_Mag",
-		//Accessories
+		//Muzzle
 	"rhs_acc_pgs64_74u", // << AKS-74UN muzzle attachment
 	"rhs_acc_dtk", // << default AK74 muzzle attachment
+	"rhs_acc_pbs1", // << PBS1 (RHS)
+	"hlc_muzzle_762sup_ak", // << PBS1 (NIA)
+	"hlc_muzzle_545sup_ak", // << PBS4 (NIA)
+		//Optics
 	"optic_KHS_blk", // << Kahlia Black
 	"optic_KHS_old", // << Kahlia Old
 	"optic_DMS", // << DMS
+	"sma_eotech552", // << Eotech
+	"sma_eotech552_3xdown", // << Eotech + 3x Magnifier
+		//Accessories
+	"rhsusf_acc_grip1", // << Grip Pod
 	"rhsusf_acc_grip2", // << AFG
+	"rhsusf_acc_grip3", // << TD Vertical
+	"rhsusf_acc_tdstubby_blk", // << TD Stubby
+	"rhsusf_acc_rvg_blk", // << RVG
 	"rhs_acc_2dpZenit", // <<2DP Flashlight
 	"rhs_acc_2dpZenit_ris", // <<2DP Flashlight RIS 
 	"sma_sffl_blk", // << Surefire Flashlight
-	"sma_eotech552", // << Eotech
-	"sma_eotech552_3xdown", // << Eotech + 3x Magnifier
 	"rhs_acc_harris_swivel", // << Harris Bipod
 		//Clothing
 	"U_BG_Guerilla1_1",
@@ -313,7 +328,7 @@ unlockedItems = unlockedItems + [
 	"rhs_altyn_visordown",
 	"rhs_balaclava",
 	"rhs_balaclava1_olive",
-		// VSM
+		//VSM
 	"VSM_FAPC_Operator_OGA_OD",
 	"VSM_RAV_operator_OGA_OD",
 	"VSM_LBT6094_operator_OGA_OD",

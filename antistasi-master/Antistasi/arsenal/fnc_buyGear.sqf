@@ -4,7 +4,7 @@ params ["_type", "_money"];
 private ["_weapons", "_accessories", "_amount"];
 
 if (AS_P("resourcesFIA") < _money) exitWith {
-	hint "not enough money :(";
+	hint "Negative. Insufficient funds.";
 };
 
 private _buyableWeapons = CSATweapons + NATOweapons;

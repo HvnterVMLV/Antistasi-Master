@@ -45,8 +45,8 @@ while {visibleMap} do {
 			if (_side == "AAF") then {if (_position call AS_fnc_hasRadioCoverage) then {_texto = format ["%1\nRadio Comms ON",_texto]} else {_texto = format ["%1\nRadio Comms OFF",_texto]}};
 			if (_location in AS_P("destroyedLocations")) then {_texto = format ["%1\nDESTROYED",_texto]};
 
-			private _description = "Cities provide money and recruits proportional to its population.
-				They contribute to the faction supported the most.";
+			private _description = "Cities provide material and personnel proportional to its population.
+				They contribute to the faction with the most influence.";
 			_texto = format ["%1\n\n%2",_texto, _description];
 		};
 		if (_type == "airfield") then {
@@ -84,7 +84,7 @@ while {visibleMap} do {
 			if (_side == "AAF") then {if (_position call AS_fnc_hasRadioCoverage) then {_texto = format ["%1\nRadio Comms ON",_texto]} else {_texto = format ["%1\nRadio Comms OFF",_texto]}};
 			if (_location in AS_P("destroyedLocations")) then {_texto = format ["%1\nDESTROYED",_texto]};
 
-			private _description = "Resource locations double the money income when unpowered, and 4x when powered.";
+			private _description = "Resources are strategic locations that provide additional income. They produce double unpowered, and quadruple when powered.";
 			_texto = format ["%1\n\n%2",_texto, _description];
 		};
 		if (_type == "factory") then {
@@ -93,7 +93,7 @@ while {visibleMap} do {
 			if (_side == "AAF") then {if (_position call AS_fnc_hasRadioCoverage) then {_texto = format ["%1\nRadio Comms ON",_texto]} else {_texto = format ["%1\nRadio Comms OFF",_texto]}};
 			if (_location in AS_P("destroyedLocations")) then {_texto = format ["%1\nDESTROYED",_texto]};
 
-			private _description = "Each factory increases money income by 25% when powered.";
+			private _description = "Factories are strategic assets that hinder enemy production when taken or destroyed, and increase our income by 25% when controlled and powered.";
 			_texto = format ["%1\n\n%2",_texto, _description];
 		};
 		if (_type in ["outpost", "outpostAA"]) then {

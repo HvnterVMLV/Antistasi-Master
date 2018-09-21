@@ -26,4 +26,4 @@ private _reportedVehs = AS_S("reportedVehs");
 } forEach vehicles;
 AS_Sset("reportedVehs", _reportedVehs);
 
-hint "All nearby units and vehicles have been healed or repaired. Near vehicles have been rearmed at full load, plates have been switched.";
+hint "Assets in vicinity have been healed, rearmed, and repaired. Vehicle plates have been switched.";

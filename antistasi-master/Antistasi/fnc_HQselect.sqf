@@ -5,7 +5,7 @@ private _hqDestroyed = !_hqInitialPlacement;
 
 if (_hqDestroyed) then {
 	AS_commander allowDamage false;
-	"Petr is Dead" hintC "Petr has been killed. You lost part of your assets and need to select a new HQ position far from the enemies.";
+	"Petr is Dead" hintC "Petr is KIA. Assets have been lost. Relocate to new position. Put some distance between you and hostiles.";
 } else {
 	diag_log "[AS] INFO: New Game selected.";
 	hint "Select the position you want to put your HQ.
@@ -56,11 +56,11 @@ while {true} do {
 	private _validLocation = true;
 	if (_closestEnemyLocation distance _position < _minDistanceToLocation) then {
 		_validLocation = false;
-		hint "That is too close from the enemy. Select another place.";
+		hint "Negative. Too close to hostiles. Indicate new position.";
 	};
 	if (_validLocation and surfaceIsWater _position) then {
 		_validLocation = false;
-		hint "Selected position cannot be in water";
+		hint "Negative, Command. HQ is not submersible. Indicate new Position";
 	};
 
 	// check if there is any enemy in the surroundings.
@@ -68,7 +68,7 @@ while {true} do {
 		{
             if ((side _x == side_red) and {_x distance _position < _minDistanceToEnemy}) exitWith {
 				_validLocation = false;
-				hint "There are enemies in the surroundings. Select another place.";
+				hint "Negative. Hostiles close. Secure position or relocate.";
 			};
 		} forEach allUnits;
 	};

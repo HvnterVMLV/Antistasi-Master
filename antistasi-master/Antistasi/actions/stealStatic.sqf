@@ -3,15 +3,15 @@ private ["_estatica","_cercano","_jugador"];
 _estatica = _this select 0;
 _jugador = _this select 1;
 
-if (!alive _estatica) exitWith {hint "You cannot steal a destroyed static weapon"};
+if (!alive _estatica) exitWith {hint "Negative. Asset destroyed."};
 
-if (alive gunner _estatica) exitWith {hint "You cannot steal a static weapon when someone is using it"};
+if (alive gunner _estatica) exitWith {hint "Negative. Asset in use."};
 
-if ((alive assignedGunner _estatica) and (!isPlayer (assignedGunner _estatica))) exitWith {hint "The gunner of this static weapon is still alive"};
+if ((alive assignedGunner _estatica) and (!isPlayer (assignedGunner _estatica))) exitWith {hint "Negative. Gunner still breathing."};
 
 _cercano = _estatica call AS_location_fnc_nearest;
 
-if (_cercano call AS_location_fnc_side == "AAF") exitWith {hint "You have to conquer this zone in order to be able to steal this Static Weapon"};
+if (_cercano call AS_location_fnc_side == "AAF") exitWith {hint "Negative. Area unsecured."};
 
 _estatica setOwner (owner _jugador);
 
@@ -44,7 +44,7 @@ switch _tipoEst do {
 		_tipoB1 = statMGtowerBackpacks select 0;
 		_tipoB2 = statMGtowerBackpacks select 1;
 	};
-	default {hint "You cannot steal this weapon."};
+	default {hint "Negative. Invalid asset."};
 	};
 
 _posicion1 = [_jugador, 1, (getDir _jugador) - 90] call BIS_fnc_relPos;

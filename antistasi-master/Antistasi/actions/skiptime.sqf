@@ -1,16 +1,16 @@
 private _enemies_around = false;
 
 if (count ("aaf_attack" call AS_mission_fnc_active_missions) != 0) exitWith {
-	hint "You cannot rest while FIA is under attack";
+	hint "Negative. Cannot rest while FIA assets are under fire.";
 };
 if (count ("aaf_attack_hq" call AS_mission_fnc_active_missions) != 0) exitWith {
-	hint "You cannot rest while FIA HQ is under attack";
+	hint "Negative. Cannot rest while HQ is under fire.";
 };
 
 {
 	if ((side _x == side_red) and {[250,_x,"BLUFORSpawn", "boolean"] call AS_fnc_unitsAtDistance}) exitWith {_enemies_around = true};
 } forEach allUnits;
-if (_enemies_around) exitWith {hint "You cannot rest with enemies near our units"};
+if (_enemies_around) exitWith {hint "Negative. Enemies Close."};
 
 private _all_around = false;
 private _posHQ = getMarkerPos "FIA_HQ";

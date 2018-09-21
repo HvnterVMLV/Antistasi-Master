@@ -7,13 +7,13 @@ if (player getVariable ["loadingCrate", false]) exitWith {
 private _candidates = nearestObjects [_destination, ["LandVehicle", "ReammoBox_F"], 20];
 _candidates = _candidates select {not (_x isKindOf "StaticWeapon")};
 _candidates = _candidates - [_destination];
-if (count _candidates == 0) exitWith {hint "No valid target to transfer from."};
+if (count _candidates == 0) exitWith {hint "Negative. No valid target."};
 private _origin = _candidates select 0;
 
 private _total = count (weaponCargo _origin + magazineCargo _origin + itemCargo _origin);
 
 if (_total == 0) exitWith {
-	hint "closest crate has no cargo";
+	hint "Negative. Crate's empty.";
 };
 
 player setVariable ["loadingCrate", true];
@@ -34,7 +34,7 @@ private _fnc_stopCondition = {
 [_origin, _total, {true}, _fnc_stopCondition, "", ""] call AS_fnc_wait_or_fail;
 
 if (call _fnc_stopCondition) then {
-	hint "Movement cancelled transfer";
+	hint "Heads up, movement cancelled transfer";
 } else {
 	[_origin, _destination] call AS_fnc_transferToBox;
 };

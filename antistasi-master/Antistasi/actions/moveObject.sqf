@@ -29,7 +29,7 @@ if (!isNil "_arguments") then {
 	};
 };
 
-if (position _vehicle distance _position > _distance) exitWith {hint "Asset is too far from the flag."};
+if (position _vehicle distance _position > _distance) exitWith {hint "Negative. Asset is too far from the flag."};
 
 _vehicle removeAction _EHid;
 _vehicle attachTo [player,_attachPoint];
@@ -65,7 +65,7 @@ _vehicle setPosATL [getPosATL _vehicle select 0,getPosATL _vehicle select 1,0];
 
 private _vehDistance = position _vehicle distance _position;
 if (_vehDistance > _distance) then {
-	hint format ["You cannot move assets farther than %1m from the location.", _distance];
+	hint format ["Negative. You cannot move assets farther than %1m from the location.", _distance];
 	// it became unreachable to move again. Find a position where it is reachable
 	private _pos = position _vehicle;
 	while {_pos distance _position > _distance} do {
@@ -75,4 +75,4 @@ if (_vehDistance > _distance) then {
 };
 player allowDamage true;
 
-if (vehicle player != player) exitWith {hint "You dropped the asset to enter in the vehicle"};
+if (vehicle player != player) exitWith {hint "Asset dropped."};

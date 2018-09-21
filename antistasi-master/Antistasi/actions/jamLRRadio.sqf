@@ -1,9 +1,9 @@
 #include "../macros.hpp"
 if AS_S("blockCSAT") exitWith {
-	hint "CSAT frequencies already jammed.";
+	hint "OPFOR frequencies already jammed.";
 };
 if (AS_S("timeToNextJam") > dateToNumber date) exitWith {
-	hint format ["No technicians available. Wait more %1 minutes", AS_S("timeToNextJam")];
+	hint format ["Negative. No technicians available. Wait %1 minutes", AS_S("timeToNextJam")];
 };
 
 private _antenasFIA = 0;
@@ -17,7 +17,7 @@ private _antenasFIA = 0;
 private _jDuration = 20 + (_antenasFIA * 10);
 private _cd = 20 + (_antenasFIA * 20);
 
-hint format ["CSAT has lost radio signal and will not be able to attack in the next %1 minutes.", _jDuration];
+hint format ["OPFOR has lost radio signal. Attack operations have been delayed for the next %1 minutes.", _jDuration];
 
 private _jtime = dateToNumber [date select 0, date select 1, date select 2, date select 3, (date select 4) + _cd];
 
